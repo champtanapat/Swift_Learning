@@ -1,0 +1,81 @@
+struct Price  
+{
+    var piece = 0 
+    var price = 0
+    
+    func sum() ->Int
+    {
+        return piece*price
+        
+    }
+    
+}
+
+class Hardware
+{
+    var name = "" 
+    var serie  = "" 
+    var price = Price() 
+    
+    
+}
+
+
+var laptop = Hardware()
+laptop.name = "Lenovo"
+laptop.serie = "#1528"
+print( "\(laptop.name), \(laptop.serie)")
+laptop.price.price = 14000 
+print(laptop.price.price)
+
+var phone = Price(piece:1,price: 50000)
+print(phone)
+print(phone.piece)
+print(phone.price)
+phone.piece = 3 
+print(phone.sum())
+
+    enum Laptop {
+    case keyboard 
+    case mouse
+    case ram
+    case harddisk
+    }
+
+    
+    var select = Laptop.harddisk 
+    switch select {
+    case .keyboard: 
+    laptop.price.price = 1000 
+    print("\(select)  : \(laptop.price.price)")
+    case .mouse: 
+    laptop.price.price = 500
+    print("\(select)  : \(laptop.price.price)")
+    case .ram: 
+    laptop.price.price = 350 
+    print("\(select)  : \(laptop.price.price)")
+    case .harddisk: 
+    laptop.price.price = 3000
+    print("\(select)  : \(laptop.price.price)")
+    }
+    
+
+var ram = Hardware() 
+ram.name = "ram"
+
+var keyboard = ram 
+keyboard.name = "keyboard"
+keyboard.price.price = 1000
+
+var harddisk = Hardware() 
+if harddisk ===  keyboard 
+{
+    print("===")
+}
+else
+{
+    print("!==")
+}
+
+
+    

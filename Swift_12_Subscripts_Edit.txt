@@ -1,0 +1,59 @@
+class Tiket {
+    var origin: String 
+    var destination: String 
+    var time = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    subscript(index:Int )->Int
+    {
+        get{
+            
+            return time[index] 
+        }
+        
+        set(newValue){
+            self.time[index] = newValue
+        }
+        
+    }
+    init(origin:String ,destination: String,index:Int )
+    {
+        self.origin = origin 
+        self.destination = destination 
+        self.time[index] = index
+    }
+    init(origin:String ,destination: String )
+    {
+        self.origin = origin 
+        self.destination = destination 
+    }
+    init()
+    {
+        origin = "-" 
+        destination = "-" 
+        time[0] = 0 
+    }
+    
+}
+
+var person1 = Tiket() 
+person1.origin = "BKK" 
+person1.destination = "Tokyo"
+print("origin: \(person1.origin)")
+print("destination: \(person1.destination)") 
+print("time: \(person1[1])")
+person1[14] = 20
+print("delay time: \(person1[14])")
+print("---------------")
+
+
+var person2 = Tiket(origin:"Tokyo",destination:"BKK") 
+print("origin: \(person2.origin)")
+print("destination: \(person2.destination)") 
+print("time: \(person2[15])")
+
+
+print("---------------")
+var person3 = Tiket()
+print("origin: \(person3.origin)")
+print("destination: \(person3.destination)") 
+print("time: \(person3.time)")
+

@@ -1,0 +1,45 @@
+﻿//  Write some awesome Swift code, or import libraries like "Foundation",
+//  "Dispatch", or "Glibc"
+
+//ประกาศตัวแปร 
+//variables ตัวแปรที่สามารถเปลี่ยนแปลงค่าได้ keyword var
+//constanrs ตัวแปรค่าคงที่ไม่สามารถเปลี่ยนได้ มี keyword let 
+
+var name = "Tanapat"
+var homeaddress = "18/90 BKK "
+let ID = "xxxxx"
+let birthdate = "1992" ; 
+
+
+print(name);
+name = "Permpoon"
+print(name)
+print(ID) 
+//ID = 90 
+
+
+
+
+
+print("Hello world!")
+let π = 3.14159
+let 你好 = "你好世界"
+let 🐶🐮 = "dogcow" 
+
+let varconstand = "ตัวแปรค่าคงที่"
+print (varconstand) 
+print (🐶🐮)
+
+
+print()
+print("--------Movie 2017----")
+var movie2017: String 
+movie2017 = "Dunkirk" ; print(":\(movie2017)")  
+movie2017 = "Star Wars: The Last Jedi" ; print(":\(movie2017)") 
+movie2017 = "Logan"; 	print(":\(movie2017)")
+movie2017 = "Justice League"; print(":\(movie2017)") 
+var movieDate :Int 
+movieDate = 01 ; print(":\(movieDate)")
+movieDate = 02 ; print(":\(movieDate)")
+movieDate = 03 ; print(":\(movieDate)")
+

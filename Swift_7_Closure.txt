@@ -1,0 +1,36 @@
+var score = [90 , 8 , 84 , 0 ]
+print(score.sorted(by:>))
+print("-------------------")
+var sortedScore = score.sorted(by: { 
+    (s1 : Int ,  s2 : Int ) -> Bool 
+    in return s1 > s2 } ) 
+print(sortedScore)
+print("-------------------")
+score = [99,88,77,66,55]
+sortedScore = score.sorted(by: { s1, s2 in  s1 > s2 } )
+print(sortedScore)
+sortedScore = score.sorted(by: { $0 < $1 } ) 
+print(sortedScore)
+
+
+var score = [90 , 8 , 84 , 0 ]
+print(score.sorted(by:>))
+print("-------------------")
+var sortedScore = score.sorted(by: { 
+    (s1 : Int ,  s2 : Int ) -> Bool 
+    in return s1 > s2 } ) 
+print(sortedScore)
+print("-------------------")
+score = [99,88,77,66,55]
+sortedScore = score.sorted(by: { s1, s2 in  s1 > s2 } )
+print(sortedScore)
+sortedScore = score.sorted(by: { $0 < $1 } ) 
+print(sortedScore)
+
+var add = 0
+var sum =  add{ Int 99 }
+
+func scoreA(score:Int)-> Int
+{
+    return 0 
+}

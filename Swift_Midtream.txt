@@ -1,0 +1,84 @@
+var emojiCoffe = "\u{2615}" 
+print(emojiCoffe) 
+print("Welcome  Coffe Shop "+emojiCoffe)
+var menuCoffe = [Int:String]()
+menuCoffe[0] = "Latte"
+menuCoffe[1] = "Mocha"
+menuCoffe[2] = "Americano"
+menuCoffe[3] = "Cappuccino"
+menuCoffe[4] = "Green Tea" 
+
+
+var menu = [0:"Late",
+            1:"Mocha",
+            2:"Americano",
+            3:"Cappuccino",
+            4:"Green Tea" ]
+
+var Menu = ["Late","Mocha","Americano","Cappuccino","Green Tea" ]
+
+//var selectType = type["Hot","ICE"] 
+if menuCoffe.isEmpty{
+    print("Close")
+}
+else {
+    
+    for(number,nameMenu) in menuCoffe
+    {
+        print("\(number) : \(nameMenu)")
+    }
+    for(number,nameMenu) in menu
+    {
+        print("\(number) : \(nameMenu)")
+    }
+    for item in Menu 
+    {
+        print(" \(item)")
+    }
+}
+
+/*
+var select = menuCoffe[4]! 
+if select.isEmpty{
+    print("please select menu: ")
+}
+*/
+
+func checkSeletMenu(){
+    
+}
+
+/*
+repeat {
+    print("plase select order: ")
+    count = count + 1 
+} while menuCoffe.isEmpty && count>=5 
+var type:[String] = ["ICE","HOT"]
+*/
+
+
+
+var order:[String] = [] 
+var order1:Array<String> = Array()
+order1.append("1")
+var id:Array<Int> = Array() 
+id.append(111)
+id.append(112)
+id.append(113)
+print(id) 
+
+func calPoint()->Int
+{
+    return 0 
+}
+
+/*
+func CalPoint()->(id:Int,point:Int)
+{
+    var ID :Int = 0  
+    var POINT:Int = 0 
+    ID = id 
+    POINT = point 
+    //self.id = id ; self.point = point 
+    return (ID,POINT)
+}*/

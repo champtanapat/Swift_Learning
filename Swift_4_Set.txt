@@ -1,0 +1,114 @@
+//Set ,no order,sametype 
+print("-------------------------------------------------")
+var song = Set<Character>()
+print("song is of type Set<Character> with \(song.count) items.")
+song.insert("a")
+print(song) //set เป็น 
+
+// Creating a Set with an Array Literal 
+var artistSongInter: Set<String> = ["Nate King Cole" , "Blur" , 
+							   "Oasis" , "Ryuichi Sakamoto",
+								 ""
+							  ] 
+
+var artistSongThai: Set = ["POLYCAT" , "Ink Waruntorn" ,"LOMOSONIC",
+						  "Slur" , "มาช่า"] 
+
+print("-------------------------------------------------")
+for x in artistSongInter
+{
+	print(x)
+	//print(removSong)
+}
+print("-------------------------------------------------")
+for x in artistSongThai
+{
+	print(x)
+	//print(removSong)
+}
+print("-------------------------------------------------")
+if artistSongThai.isEmpty 
+{
+	
+	print("set is Empty")
+}
+else
+{
+	print("set is not Empty ")
+}
+
+/* 
+insert(_:)
+contains():
+removeAll()
+remove(_:) 
+contains(_:)
+*/
+
+
+artistSongInter.insert("Jazz")
+for x in artistSongInter
+{
+	print(x)
+}
+if var removSong = artistSongThai.remove("xx") 
+{
+	print("Found ")
+}
+else
+{
+	print("not Found")
+}
+
+
+print("-------------------------------------------------")
+
+if var removSong = artistSongThai.remove("มาช่า") 
+{
+	print("Found remove Complete")
+}
+else
+{
+	print("not Found")
+}
+for x in artistSongInter
+{
+	print(x)
+	//print(removSong)
+}
+print("-------------------------------------------------")
+// contains  ค้นหาคำที่ต้องการ 
+if artistSongThai.contains("Slur")
+{
+	print("Found \(artistSongThai)")
+}
+else
+{
+	print("not Found ")
+}
+for x in artistSongInter
+{
+	print(x)
+}
+print("-------------------------------------------------")
+print("sorted()") // A  Z 
+for x in artistSongInter.sorted()
+{
+	print(x)
+}
+print("-------------------------------------------------")
+//--------------------------------
+print("***Set Operations***")
+/* the intersection(_:) method to create a new set with only the values common to both sets.
+Use the symmetricDifference(_:) method to create a new set with values in either set, but not both.
+Use the union(_:) method to create a new set with all of the values in both sets.
+Use the subtracting(_:) method to create a new set with values not in the specified set.
+*/
+let houseAnimals: Set = ["🐶", "🐱"]
+let farmAnimals: Set = ["🐮", "🐔", "🐑", "🐶", "🐱"]
+let cityAnimals: Set = ["🐦", "🐭"]
+print(houseAnimals.isSubset(of: farmAnimals))
+// true
+print(farmAnimals.isSuperset(of: houseAnimals))
+// true
+print(farmAnimals.isDisjoint(with: cityAnimals))

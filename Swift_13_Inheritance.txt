@@ -1,0 +1,78 @@
+class Hardware{
+    var series:String?
+    var name:String = ""
+    var price:Int = 0 
+    var pies:Int = 0 
+    func Price()  {
+        print("Hardware: \(name) price \(pies * price)")
+    }
+    
+    init()
+    {
+        
+    }
+    
+    init(series:String ,name:String,pies:Int,price:Int )
+    {
+        self.series = series
+        self.name = name
+        self.pies = pies
+        self.price = price
+    }
+    
+}
+
+class Computer:Hardware {
+    var cpu: String? 
+    override func Price()  {
+        print("Laptop price: \(super.pies*super.price) ")
+    }
+}
+
+class Refrigerator:Hardware{
+    var temperature:Int = 0
+    override func Price()  {
+        print("Refrigerator price: \(super.pies*super.price)")
+    }
+}
+
+
+
+var hardware = Hardware()
+hardware.series = "#222"
+print("series: \(hardware.series)")
+print("name: \(hardware.name)")
+print("cpu: \(hardware.pies)")
+print(hardware.Price())
+print("--------------")
+
+
+var laptop = Computer() 
+laptop.series = "#122"
+laptop.name = "lenovo"
+laptop.pies = 2
+laptop.price = 10000
+laptop.cpu = "Intel"
+print("series: \(laptop.series!)")
+print("name: \(laptop.name)")
+print("cpu: \(laptop.cpu!)")
+print(laptop.Price())
+print("--------------")
+
+
+
+
+var refrigerator = Refrigerator() 
+refrigerator.series = "#223"
+refrigerator.name = "HITACHI"
+refrigerator.pies = 3
+refrigerator.temperature=12
+print("series:\(refrigerator.series!)")
+print("name: \(refrigerator.name)")
+print("temperature: \(refrigerator.temperature)")
+print(refrigerator.Price())
+print("--------------")
+
+
+
+

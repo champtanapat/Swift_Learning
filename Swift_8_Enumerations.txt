@@ -1,0 +1,63 @@
+enum Grade {
+    case A
+    case B
+    case C
+    case D
+}
+var report = Grade.A 
+print(report)
+
+var grade = Grade.D 
+switch  grade {
+    case .A:
+    print("grade A")
+    case .B:
+    print("grade B")
+    case .C:
+    print("grade C")
+    case .D:
+    print("grade D")
+    default:
+    print("Not Input gared ")
+}
+
+enum Barcode {
+    case cd(String,Double)
+}
+
+
+var ablumBarcode = Barcode.cd("#123456",150.5)
+print(ablumBarcode)
+
+switch ablumBarcode{
+    case .cd(let select) : 
+        print("code \(select.0) \(select.1)")
+}
+
+
+
+enum Mc: Int{
+    case cheeseBurger = 1 ,porkBurger,frenchFries
+}
+
+var orderBuger = Mc.porkBurger.rawValue
+print(orderBuger)
+var orderBuger_1 = Mc(rawValue:1)
+print(orderBuger_1)
+
+
+
+if var orderBuger_1 = Mc(rawValue:1) {
+switch orderBuger_1{
+    case .cheeseBurger: 
+        print("Price : 105")
+    case .porkBurger: 
+         print("Price : 155")
+    case .frenchFries:
+        print("Price : 78 ")
+    }
+}
+else
+{
+    print("no order")
+}

@@ -1,0 +1,108 @@
+
+// Collection Types 4 
+// Collection Type Array,Dictionary,Set
+print("***Collection Types***") 
+print("***Array***") 
+// Array Type Shorthand Syntax 
+
+// Creating an Empty Array 
+
+var  japaneseActors = [String]() //  ()  initializer เช็ตค่า array เป็นว่าง 
+var japaneseActors_1: Array<String> 
+japaneseActors_1 = [""]
+
+// Creating an Array with an Array Literal  
+
+japaneseActors_1 = ["Nana Komatsu" , "Tsubasa Honda" , "Motola Serena"] 
+japaneseActors_1.append("Komai Ren")
+print("--------------------Japanese Actors--------------------")
+for x in japaneseActors_1 
+{
+	print(x)
+}
+japaneseActors_1 = [] // Default array ค่าว่าง  
+print("------------------------------------------------------")
+
+//Creating an Array with a Default Value 
+var japanese_Films = Array(repeating:"",count:3 ) //กำหนด array "count:3" ขนาด3 ค่าเริ่มต้น repeating เป็นค่าว่าง "" 
+
+japanese_Films = Array(repeating:"xxx",count:5 )
+print("--------------------Japanese_Films--------------------")
+for nameFilms in japanese_Films 
+{
+	print(nameFilms)
+}
+print("------------------------------------------------------")
+
+//Accessing and Modifying an Array 
+print("count Films:  \(japanese_Films.count)")
+/* property  array 
+.count 
+.isEmpty 
+*/
+var umm = [String]()
+print("count umm \(umm.count)")
+print("------------------------------------------------------")
+japaneseActors_1 = ["Nana Komatsu" , "Tsubasa Honda" , "Motola Serena"] 
+japaneseActors_1.append("Takeda Rena") 
+/* method  
+append(_:)
+insert(_:at:) 
+*/
+for u in japaneseActors_1
+{
+	
+	print(u)
+}
+print("count: ",japaneseActors_1.count)
+print("------------------------------------------------------")
+print("count: ",japaneseActors_1.count)
+japaneseActors_1[1...2]  = ["Kiko Mizuhara", "xxx" ,"yyy" , "zzz"]
+for names in japaneseActors_1
+{
+	
+	print(names)
+}
+print("count: ",japaneseActors_1.count)
+print("------------------------------------------------------")
+print("count: ",japaneseActors_1.count)
+japaneseActors_1 = ["Nana Komatsu" , "Tsubasa Honda" , "Motola Serena" , "Takeda Rena" ,"Kiko Mizuhara"] 
+japaneseActors_1.insert("AsahinaAya",at: 5)
+japaneseActors_1.insert("AsahinaAya",at: 6)  
+japaneseActors_1.insert("AsahinaAya",at: 7)  
+for names in japaneseActors_1
+{
+	
+	print(names)
+}
+print("count: ",japaneseActors_1.count)
+print("------------------------------------------------------")
+//Closed Range Operator
+print("count: ",japaneseActors_1.count)
+for  names in japaneseActors_1[1...5] 
+{
+	print(names)
+    
+}
+print("count: ",japaneseActors_1.count)
+print("------------------------------------------------------")
+
+print("count: ",japaneseActors_1.count)
+japaneseActors_1.remove(at:5)
+japaneseActors_1.removeLast()
+for  names in japaneseActors_1  
+{
+	print(names)
+    
+}
+print("count: ",japaneseActors_1.count)
+print("------------------------------------------------------")
+
+//Iterating Over an Array
+print("count: ",japaneseActors_1.count)
+for (index, value) in japaneseActors_1.enumerated() {
+    print("Item \(index): \(value)")
+}
+print("count: ",japaneseActors_1.count)
+print("------------------------------------------------------")
+print("***END Array***")

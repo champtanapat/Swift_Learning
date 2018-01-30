@@ -1,0 +1,289 @@
+//  Write some awesome Swift code, or import libraries like "Foundation",
+//  "Dispatch", or "Glibc"
+
+print("-------------------------------------------------")
+//ประกาศตัวแปร 
+//variables ตัวแปรที่สามารถเปลี่ยนแปลงค่าได้ keyword var
+//constanrs ตัวแปรค่าคงที่ไม่สามารถเปลี่ยนได้ มี keyword let 
+print("***Variables/Constants***")
+var citizenName = "Tanapat"
+var homeAddress = "18/90 BKK "
+let citizenID = "xxxxx"
+let birthdate = "1992" ;
+print(citizenName)
+citizenName = "Permpoon"
+print(citizenName)
+//citizenID = 90  Error type 
+print(citizenID,homeAddress,"birthdate: "+birthdate) 
+print("-------------------------------------------------")
+
+print("***Declare variable***")
+//--ประกาศตัวแปรหลายตัว
+//var x = 0.0 , x = 1.1 
+var colorcodeBlue = "#0000FF ", colorcodeRed = "#FF0000" , colorcodeYellow = "#FFFF00"
+print(colorcodeBlue,colorcodeRed,colorcodeYellow)  
+let helloJapan = "こんにちは", helloSpanish = "Hola", helloFrench = "Bonjour"
+,helloChina = "你好" 
+print(helloJapan,helloSpanish,helloFrench,helloChina) 
+
+
+print("-------------------------------------------------")
+//--ประกาศตัวแปร 
+// ชื่อตัวแปร :(colon) ชนิดข้อมูล 
+var girlGroup: String 
+girlGroup = "BNK48"
+var namesong = "Koisuru Fortune Cookie " 
+print(girlGroup);
+
+//-- Printing 
+print("Artist is \(girlGroup)") ; var newreleases = "Aitakatta" ;  
+print ("Song: \(namesong)") 
+print ("Song: \(newreleases)")
+print("-------------------------------------------------")
+
+
+//ชนิด Type 
+print("***Type***")
+print("Top 3 movie 2016")
+var movieTop_3: String  ; var moneyMakingTop_1: Int ; 
+movieTop_3 = "Captain America: Civil War " ; print(":\(movieTop_3) ")  
+moneyMakingTop_1 = 1153304495 ; // $1,153,304,495
+//print("$" + moneymaking) // binary operator  + 
+print("$",moneyMakingTop_1,"$1,153,304,495");
+movieTop_3 = "Rogue One: A Star Wars Story" ; print(":\(movieTop_3)") 
+//moneymaking= 12345678901234567890 //-- overflow Int , Int8 ,Int32 , Int64 
+//var moneymakingTop_1 Int //--ประกาศตัวแปรชื่อซ้ำไม่ได้
+/*
+var moneymakingTop_2
+print(moneymakingTop_2) 
+ประกาตัวแปรวาง print ออกไม่ได้ 
+*/
+var moneyMakingTop_2 : Float
+moneyMakingTop_2 = 12345678901234567890; 
+print("$",moneyMakingTop_2,"$12,345,678,901,234,567,890") 
+movieTop_3 = "Finding Dory "; 	print(":\(movieTop_3)")
+print("$",1056057273,"$1,056,057,273")
+print("-------------------------------------------------")
+print("***Type of Numbers ***")
+
+let divTwoNumberInt 	: Int	;	divTwoNumberInt = 2/3 ; 
+print("INT 2/3 : ",divTwoNumberInt) 
+let divTwoNumberDouble	: Double; 	divTwoNumberDouble = 2/3 ; //Double 64-bit 
+print("Double 2/3 : ",divTwoNumberDouble) 	
+let divTwoNumberFloat	: Float ; 	divTwoNumberFloat = 2/3 ; //Float 32-bit 
+print("Float 2/3 : ",divTwoNumberFloat) 	
+
+let PI : Int 
+PI = 1 
+var PI_1: Float 
+PI_1 = 3.14159265358979323846264 
+print("PI Float",PI_1)
+let PI_2:Double 
+PI_2 = 3.14159265358979323846264
+print("PI Double", PI_2) 
+//print(PI + PI_1) //ตัวแปรต่างชนิด opreator + ไม่ได้ Int and Float 
+print(1 + PI_1 )
+PI_1 = 10 + PI_1 
+print(PI_1)
+print("-------------------------------------------------")
+print("***Numeric Type Conversion***")
+let twoThousand: UInt16 = 2_000
+let one: UInt8 = 1
+let twoThousandAndOne = twoThousand + UInt16(one)
+
+
+var bookOfMichaelSandel = 390
+var bookOfMurakami = 12.0; // Defalut is Double not float 
+var sumprice : Float 
+sumprice = Float(bookOfMurakami) + Float(bookOfMichaelSandel) 
+print("price: ",sumprice) 
+var bookOfFuture = "280"
+
+var dieTomorrow = true 
+if dieTomorrow {
+	print("so sad")
+}
+else 
+{
+	
+}
+print("-------------------------------------------------")
+print("***Tuples***")
+let menu = (menu1:"คะน้าหมูกรอบ",menu12:"ไข่เจียว",other:"อะไรก็ได้")
+print("wat you're eat "+menu.other)
+
+print("***Optional***")
+var printPrice:Int?  = Int(bookOfFuture)
+
+
+if menu.0 == nil 
+{ 
+	print("Close") 
+}
+else {
+	print("Open")
+}
+
+
+
+
+print("Debugging with Assertions")
+let age = 3
+assert(age >= 0, "A person's age can't be less than zero.")
+// This assertion fails because -3 is not >= 0.
+assert(age >= 0)
+
+
+let possibleNumber = "123"
+let convertedNumber = Int(possibleNumber) 
+
+if let actualNumber = Int(possibleNumber) {
+    print("\"\(possibleNumber)\" has an integer value of \(actualNumber)")
+} else {
+    print("\"\(possibleNumber)\" could not be converted to an integer")
+}
+
+
+
+// Edit  
+/*
+
+- เวลาตั้งชื่อตัวแปร คำที่สอง สาม สี่... ควรขึ้นด้วยตัวพิมพ์ใหญ่ค่ะ เช่น girlGroup
+
+ไม่ได้ทดลองหัวข้อเหล่านี้ ไปทำมานะคะ
+- comment แบบ nested multiline comment /
+- binary, octal, hexadecimal / 
+- floating-point literals เช่น 1.25e2, 0xFp2 / 
+- Type Aliases /
+- กรณี let i = 1 แล้วทำ if i { .. } / 
+- decompose tuple / 
+- เรียกใช้ค่าใน tuple แบบ .0 หรือ .1 เป็นต้น /
+- ใช้ ? ในการ declare ตัวแปรเป็น optional  / 
+- forced unwrap โดยใช้ ! / 
+- ไปทำ optional binding เพิ่มด้วยค่ะ
+- implicitly unwrapped optionals /
+- ไปลองทำ assert เพิ่มเติมดูนะคะ
+*/ 
+
+
+print("-------------------------------------------------") 
+//Numeric Literals 
+//binary 
+// เลขฐานสอง Binary number 0b  , ฐานหก octa Octal 0o ,ฐานสิบหก hexadecimal 0x  
+let binaryNumber = 0b101010
+print("binaryNumber: 0b101010 Binary to Decimal: " ,binaryNumber)   
+let octalNumber = 0o101010 
+print("octalNumber: 0o101010 Octal to Decimal: " ,octalNumber)   
+let hexadecimalNumber = 0x101010 
+print("hexadecimal: 0x101010 Hexadecimal to Decimal: " ,hexadecimalNumber)   
+
+var floating_point_1   = 1.25e2
+print("floatting point: 1.25e2 : ",floating_point_1)
+floating_point_1   = 1.25e-2
+print("floatting point: 1.25e-2 : ",floating_point_1)
+
+let menu_1 = (40,"ไข่เจียว",20.5)
+print("wat you're eat ",menu_1.0)
+
+var floating_point :Float? 
+print(floating_point)
+
+if floating_point == nil 
+{
+	print("Var floating_point is nil ",floating_point)
+}
+else
+{
+	
+}
+
+
+print("-------------------------------------------------") 
+print("***Type Aliases***") 
+//Ref ข้อมูล 
+typealias myColor = Int 
+var curretnColor : myColor = 0901 
+print(curretnColor)
+
+var slectMenu = myColor.max
+print(slectMenu) 
+
+
+/*
+let i = 1 
+if i {
+	
+	
+} 
+not boolean 
+only condition boolean 
+
+*/
+
+let iii = 111 
+if iii > 900
+{
+	print("more 900")
+}
+else{
+	
+	print("less 900")
+}
+
+print("-------------------------------------------------") 
+print("***Optional***")
+//เก็บข้อมูลแบบ ไม่มีค่า No value หรือ มีค่าก็ได้ 
+
+//เก็บข้อมูลแบบ ไม่มีค่า No value หรือ มีค่าก็ได้ 
+//เก็บข้อมูลแบบ ไม่มีค่า No value หรือ มีค่าก็ได้ 
+/*var url : String 
+print(url) 
+*/
+var address = "https://swift" 
+let URL_1 : Int? = Int(address)
+print(URL_1)
+if URL_1 != nil
+{
+	print(URL_1)
+}
+
+address = "123"
+let URL_2: String? = address 
+print(URL_2)
+address = ""
+let URL_3: String = address 
+
+if URL_3 == nil
+{
+	print("Url nill ")
+	
+}
+else 
+{
+	print("Url is ",URL_3)
+}
+// forced unwrap
+var address_2:String? 
+let URL_4:String?  = address_2 
+if URL_4 != nil
+{
+	
+	print("Url is ",URL_4)
+	
+}
+else 
+{
+	print("Url nill ")
+}
+
+
+//Implucitly รูปแบบของ Optional 
+var time : String! 
+print(time)
+
+// Ooptional Binding 
+
+
+//Assertions 
+//ตรวจสอบค่า ว่ามีค่าหรือไม่ 
+

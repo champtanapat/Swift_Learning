@@ -1,0 +1,86 @@
+struct Twitter
+{
+    var user: String
+    subscript(tweet:String) ->String 
+    {
+        get{
+        
+            return ""+tweet
+        }
+        set(newValue){
+            user = newValue
+        }
+    }
+    
+}
+
+var post1 = Twitter(user:"AB")
+print("User: \(post1.user) tweet: \(post1["Happy New Year 2018 "])")
+var post2 = Twitter(user:"CD")
+print("User: \(post2.user) tweet: \(post2["bear"])")
+post2["bear"] = "T"
+print("User: \(post2.user) tweet: \(post2["bear"])")
+
+
+
+
+
+class Tiket {
+    var origin: String 
+    var destination: String 
+    var time: Int? 
+    subscript(time:Int )->Int 
+    {
+        get{
+            
+            return time 
+        }
+        set(newValue){
+            self.time = newValue 
+        }
+    }
+    init(origin:String ,destination: String,time:Int )
+    {
+        self.origin = origin 
+        self.destination = destination 
+        self.time = time 
+    }
+    init(origin:String ,destination: String )
+    {
+        self.origin = origin 
+        self.destination = destination 
+    }
+    init()
+    {
+        origin = "-" 
+        destination = "-" 
+        time = 0 
+    }
+    
+}
+var person1 = Tiket() 
+person1.origin = "BKK" 
+person1.destination = "Tokyo"
+print("origin: \(person1.origin)")
+print("destination: \(person1.destination)") 
+print("time: \(person1[14])")
+person1[14] = 15
+print("delay time: \(person1.time!)")
+print("---------------")
+
+var person2 = Tiket(origin:"Tokyo",destination:"BKK") 
+print("origin: \(person2.origin)")
+print("destination: \(person2.destination)") 
+print("time: \(person2[15])")
+
+print("---------------")
+var person3 = Tiket()
+print("origin: \(person3.origin)")
+print("destination: \(person3.destination)") 
+print("time: \(person3.time)")
+
+
+
+
+
+

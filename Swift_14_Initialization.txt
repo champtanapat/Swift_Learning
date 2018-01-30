@@ -1,0 +1,306 @@
+struct Tiket {
+    var price: Int 
+    init()
+    {
+        price = 0 
+    }
+    
+    init(discount  :Int )
+    {
+        price = discount  
+    }
+    init(change:Int)
+    {
+        price = change 
+    }
+}
+
+
+
+
+var p = Tiket()  
+print("defalut price:  ") 
+let bank = Tiket(discount:300)
+print("price: \(bank)")
+let change = Tiket(change:400)
+print("price: \(change)")
+print("-----------------------")
+
+
+
+struct Shape{
+  var triangle =  0 
+  var square = 0 
+  var circle = 0 
+  init(triangle:Int ,square: Int ,circle:Int )
+  {
+      self.triangle = triangle 
+      self.square  = square 
+      self.circle   = circle 
+  }
+  init(pyramid: Int)
+  {
+      triangle = pyramid
+      square = pyramid 
+      circle = pyramid 
+  }
+ init(_ unkonw: Int )
+ {
+     triangle = unkonw
+      square = unkonw 
+      circle = unkonw 
+     
+ }
+}
+
+var square = Shape(triangle:0 , square:1,circle:0 )
+var pyramid = Shape(pyramid:0 )
+var unkonw = Shape(0)
+
+
+class Post{
+    let text = "what's on your mind,? : " 
+    var status : String? 
+    init(status:String)
+    {
+        self.status = status
+        
+    }
+    
+    
+}
+
+let userOne = Post(status:"Hi")
+print(userOne.text)
+print(userOne.status!)
+print("-----------------------")
+
+
+struct Resolution
+{
+    
+    var x : Int = 0
+    var y : Int = 0 
+    init (){
+        x = 0  
+        y = 0
+    }
+    init(x:Int ,y:Int )
+    {
+        self.x = x 
+        self.y = y 
+    }
+    
+}
+class Screen
+{
+    var size :Int 
+    var resolution = Resolution() 
+    var panelType:String
+    init(){
+        self.size = 0 
+        self.panelType = "xxx"
+    }
+    
+    init(size:Int,panelType:String)
+    {
+        self.size = size
+        self.panelType = panelType
+    }
+    init(size:Int,resolution:Resolution,panelType:String)
+    {
+        self.size = size
+        self.resolution = resolution
+        self.panelType = panelType
+    }
+    
+   
+}
+
+
+var dell = Screen()
+dell.size = 24 
+dell.resolution.x = 1920
+dell.resolution.y = 1080
+dell.panelType = "TN"
+print("size: ",dell.size)
+print("resolution: ",dell.resolution)
+print("panelType: ",dell.panelType)
+
+
+print("-----------------------")
+var philips = Screen(size:21,resolution:Resolution(x:1920,y:1080),panelType:"AH-IPS")
+print("size: ",philips.size)
+print("resolution: ",philips.resolution)
+print("panelType: ",philips.panelType)
+print("-----------------------")
+
+class Transport{
+    var numberCar = "xxx" 
+    
+}
+
+
+class Bus:Transport{
+    var km = 0 
+    override init()
+    {
+        super.init() 
+        numberCar = "No.2"
+    }
+}
+
+let t = Transport() 
+t.numberCar = "No.1"
+print("Transport: ",t.numberCar)
+
+var d = Bus() 
+print("Bus: ",d.km)
+print(d.numberCar)
+
+class Book 
+{
+    var name:String 
+    init(name:String)
+    {
+        self.name = name 
+    }
+    convenience init ()
+    {
+        self.init(name:"xxx")
+    }
+}
+
+
+class Fiction: Book {
+    var writer:String
+    init(name:String ,writer:String)
+    {
+        self.writer = writer 
+        super.init(name:name)
+    }
+    override convenience init(name:String )
+    {
+        self.init(name:name,writer:"Haruki Murakami")
+    }
+}
+
+class Award:Fiction
+{
+        var votes:Int = 0 
+        
+        /*init(votes:Int )
+        {
+            self.votes = votes 
+        }
+        */
+        /*
+        override init()
+        {
+            self.votes = 0
+        }
+        */
+        
+        
+        override init(name:String , writer: String)
+        {
+            super.init(name:name,writer:writer)
+        }
+        
+}
+
+
+
+print("-----------------------")
+var ink = Book(name:"INK WARUNTORN")
+print(ink.name)
+print("-----------------------")
+var myBook = Book()
+print(myBook.name)
+var myFiction = Fiction(name:  "Norwegian Wood") 
+print(myFiction.name,myFiction.writer)
+
+
+
+
+
+struct Play{
+    let song: String
+    init()
+    {
+        self.song = "xxx"
+    }
+    init?(song:String)
+    {
+        if song.isEmpty {
+            return nil}
+        self.song = song 
+        
+    }
+    
+}
+var firstSong = Play(song:"Hello say goodbye ")
+var nextSong = Play()
+if firstSong == nil {
+    print("not ") 
+}
+
+class Home{
+    var No:String?
+    var name:String = "" 
+    init()
+    {
+        self.No = "--"
+        self.name = "-"
+    }
+    init?(No:String)
+    {
+        if No.isEmpty{
+            return nil 
+        }
+        self.No = No
+    }
+    
+    required init(name:String,No:String)
+    {
+        self.name = name  
+         self.No = No
+    }
+}
+
+class Furniture:Home{
+    var price:Int 
+    override init()
+    {
+        self.price = 0 
+        super.init()
+    }
+    required  init(name:String,No:String)
+    {
+        self.price = 0 
+        super.init(name:name,No:No)
+    }
+    init(price:Int,name:String,No:String)
+    {
+        self.price = price 
+        super.init(name:name,No:No)
+    }
+    override init!(No:String)
+    {
+        if No.isEmpty {
+            return nil
+        }
+        
+        self.price = 0 
+        super.init(No:No)
+    }
+}
+
+var desk = Furniture(No:"Nu")
+print(desk!.No!)
+print(desk!.price)
+desk!.price = 10000
+print(desk!.price)
+
+
+

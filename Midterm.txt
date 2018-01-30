@@ -1,0 +1,141 @@
+var menuCoffe = ["Latte" , "Cappuccino" ,"Mocha","Green tea","Espresso" ]
+var typeAndPrice = ["HOT":80, "ICE":100]
+var dataBaseCard = ["111","112","113","114"]
+var dataBaseCardID = ["111":"Jennifer","112":"Turpin","113":"Super"]
+var dataBaseCardPoint = ["111":450,"112":100,"113":150]
+var datatBaseCradPrice = ["111":5,"112":90,"113":50]
+
+func showMenu(nameMenu:[String])
+{
+    let emojiCoffe = "\u{2615}" 
+    print("-----------------------------")
+    print("Welcome to Coffe Shop "+emojiCoffe)
+    print("-----------------------------")
+    print("Menu Coffe ")
+    for items in nameMenu
+    {
+        for (type,price) in typeAndPrice
+        {
+            print(" \(items)"+"(\(type)): \(price)")
+        }
+    }
+    print("-----------------------------")
+}
+
+showMenu(nameMenu:menuCoffe)
+
+var selectType = typeAndPrice["HOT"]
+if let select = String(menuCoffe[0])
+{
+    print("select : \(select) \(selectType!)")
+}
+else
+{
+    print("please select ")
+}
+let select = String(menuCoffe[0])
+var cardID :String = ""
+var cardName: String 
+//var cardPoint: Int = 0 
+//var cardPrice: Int = 0  
+cardID = "111"
+
+
+func checkID(ID:String)->Bool
+{
+    for loop in dataBaseCard 
+    {
+        if cardID == loop
+        {
+            return true
+        }
+    }
+    return false
+}
+
+
+func exchangGift(_ card :String) {
+    
+    enum Gift:String{
+        case pen
+        case clock
+        case tiket
+        case enough
+    }
+    var grif = Gift.enough
+    switch  dataBaseCardPoint[card]!
+    {
+        case 300...399:
+        grif = Gift.pen
+        case 400...499:
+        grif = Gift.clock
+        case 500...599:
+        grif = Gift.tiket
+        default:
+        grif = Gift.enough
+    
+    }
+
+    switch grif
+    {
+        case .pen:
+        print("🖋 Point :300")
+        case .clock: 
+        print("⌚️ Point :400")
+        case .tiket:
+        print("✈️ Point :500 ")
+        case .enough: 
+        print("Point not enough ")
+    
+    }
+
+}
+
+print("-----------------------------")
+
+if !checkID(ID:cardID)
+{
+    print("Not found CardID \(cardID)")
+
+}
+else
+{
+
+    print("ID: \(cardID) Name: \(dataBaseCardID[cardID]!) ")
+    print("Ponit: \(dataBaseCardPoint[cardID]!) ")
+    
+pay:while datatBaseCradPrice[cardID]! <= selectType!
+    {
+        //เติมเงินในบัตร 
+        print("money enouh Can't Buy: \"\(select!)\"  ")
+        print("please เติมเงิน ");
+        print("balance: \(datatBaseCradPrice[cardID]!) ") 
+        print("20|50|100|150|200|250 BATH.")
+        var itemsPrice = [20,50,100,150,150,200,250]
+        var selectItemsPrice = itemsPrice[0]
+        datatBaseCradPrice[cardID] =  datatBaseCradPrice[cardID]! + selectItemsPrice
+        print("select: \(selectItemsPrice) addPrice: \(selectItemsPrice)")
+        print("balance: \(datatBaseCradPrice[cardID]!)") 
+        print("-----------------------------")
+        if datatBaseCradPrice[cardID]! >= selectType!
+        {
+            
+            break pay
+        }
+        else
+        {
+            continue pay
+        }
+   }
+   print("Buy: \(select!)")
+   datatBaseCradPrice[cardID] = datatBaseCradPrice[cardID]! - selectType!
+   print("balance: \(datatBaseCradPrice[cardID]! )") 
+   dataBaseCardPoint[cardID]! = dataBaseCardPoint[cardID]! + 10 
+   print("Point \(dataBaseCardPoint[cardID]!)")
+}
+
+
+print("---------Gift---------")
+exchangGift(cardID) 
+
+

@@ -1,0 +1,38 @@
+struct Yotube  
+{
+    var name :String? 
+    var url :String? 
+    mutating func nextSong(name deltaX: String, url deltaY: String) {
+        name = deltaX
+        url = deltaY
+    }
+    mutating func backSong(name deltaX: String, url deltaY: String)
+    {
+        self =  Yotube(name:"x", url:"https://www.youtube.com")
+    }
+    init()
+    {
+        name = "_" 
+        url = "youtube.com"
+    }
+    init(name:String,url:String )
+    {
+        self.name = name 
+        self.url = url 
+    }
+}
+
+var song = Yotube()
+song.nextSong(name:"x" , url:"")  
+print(song.name!)
+
+var time = 3 
+if time%3 == 0  
+{
+     song.nextSong(name:"Better Weather" ,url:"https://youtu.be/SDpZUjquhTk")
+}
+else
+{
+    song.backSong(name:"Ryuichi Sakamoto",url:"https://youtu.be/DHy1iKBtTq4")
+}
+

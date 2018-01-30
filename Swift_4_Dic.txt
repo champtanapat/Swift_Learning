@@ -1,0 +1,59 @@
+﻿/*keys of the same type and values of the same type in a collection with no defined ordering.*/
+//Creating an Empty Dictionary 
+print("***Dictionary***")
+var albumSongs = [Int: String]()  
+albumSongs[1] = "xxx"
+
+print(albumSongs) 
+//empty dictionary
+albumSongs = [:]
+print(albumSongs)
+
+//Creating a Dictionary with a Dictionary Literal
+//[key 1: value 1]
+var stadiumBaseball = [01:"Yankee Stadium" , 02:"Fenway Park" ,03:"Dodger Stadium"]
+print(stadiumBaseball)
+print("\(stadiumBaseball)") 
+
+if stadiumBaseball.isEmpty {
+    print("stadiumBaseball dictionary is empty.")
+} else {
+    print("stadiumBaseball dictionary is not empty.")
+}
+// add,subscript  
+stadiumBaseball[4] = "xxx"
+print(stadiumBaseball[4])
+
+//updateValue(_:forKey:)
+stadiumBaseball.updateValue("Angel Stadium of Anaheim",forKey: 05)
+print(stadiumBaseball)
+print("--------------------------------------------------------------")
+
+stadiumBaseball[6] = "xxx"
+print(stadiumBaseball)
+
+print("--------------------------------------------------------------")
+print("remove")
+stadiumBaseball[6] = nil
+stadiumBaseball.removeValue(forKey:04)
+print(stadiumBaseball)
+print("--------------------------------------------------------------")
+
+//Iterating Over a Dictionary
+for (code, name) in stadiumBaseball {
+    print("\(code): \(name)")
+}
+print("--------------------------------------------------------------")
+
+for code in stadiumBaseball.keys
+{
+    print("Stadium code: \(code)")
+}
+
+for name in stadiumBaseball.values {
+    print("Stadium name: \(name)")
+}
+
+print("--------------------------------------------------------------")
+
+

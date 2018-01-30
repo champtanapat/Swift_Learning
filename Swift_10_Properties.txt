@@ -1,0 +1,88 @@
+struct Play  
+{
+    var startTime = 0 
+    var endTime = 0
+    
+    func Pause() ->Int
+    {
+        return endTime
+        
+    }
+    
+}
+
+class Yotube  
+{
+    var name :String? 
+    var url :String? 
+    var play:Play
+    {
+        get{
+           return Play(startTime:0,endTime:4)
+            
+        }
+        set{
+            
+            Play(startTime:0,endTime:5)
+        }
+    }
+    init()
+    {
+        name = "_" 
+        url = "youtube.com"
+    }
+    init(name:String,url:String )
+    {
+        self.name = name 
+        self.url = url 
+    }
+}
+
+
+var song = Play(startTime:0 ,endTime: 4)
+var search = Yotube() 
+search.name = "Ryuichi Sakamoto" 
+print(search.name!)
+print(search.url!)
+search.url = "https://youtu.be/DHy1iKBtTq4"
+print(search.url!)
+
+
+var search_ = Yotube() 
+print(search_.name!)
+print(search_.url!)
+search_ = Yotube(name:"Soul After Six" ,url: "https://youtu.be/jLxgMriPjyg" )
+print(search_.name!)
+print(search_.url!)
+
+class Paypal
+{   
+    
+    var order = 0 
+    var price = 0 
+    lazy var balance  = {(price:Int,order:Int)-> Int in 
+        
+        return price - order 
+    }
+}
+
+var pay = Paypal() 
+pay.order = 20 
+
+var pay1 = Paypal()
+print(pay1.balance(500,2))
+pay1.price = 300 
+
+
+var playSong = Yotube() 
+print(playSong.play.startTime) 
+playSong.play.endTime = 5 
+var time = 0 
+while time <= playSong.play.endTime 
+{
+
+    print("Time \(time)")
+    time = time + 1 
+}
+print("Stop music ")
+
